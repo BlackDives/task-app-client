@@ -1,0 +1,43 @@
+.task-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #18181c;
+  width: 225px;
+  padding: 15px;
+  border-radius: 10px;
+  margin-right: 15px;
+  border: 2px solid transparent;
+  height: 200px;
+}
+
+.task-card:active {
+  border: 2px solid #b9b8c7;
+}
+
+.pills {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+}
+
+.priority-pill {
+  background-color: #b9b8c7;
+  margin-right: 5px;
+  padding: 5px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.status-pill {
+  background-color: #5d5b72;
+  padding: 5px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.task-description {
+  text-align: left;
+  margin-top: 10px;
+  font-size: 16px;
+}

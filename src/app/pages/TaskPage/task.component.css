@@ -1,0 +1,89 @@
+.task-page-main {
+  height: 100%;
+  width: 100%;
+  padding-left: 2rem;
+  padding-top: 0.5rem;
+}
+
+.create-section {
+  margin: 15px 0;
+}
+
+.create-button {
+  background-color: #8a87ab;
+  color: #ececee;
+  border: none;
+  font-size: medium;
+  font-weight: 700;
+  padding: 15px 15px;
+  border-radius: 8px;
+  transition: background-color 0.5s;
+}
+
+.create-button:hover {
+  background-color: #4a4861;
+  transition: background-color 0.5s;
+}
+
+.search-bar-container {
+  margin-top: 0.5rem;
+}
+
+.search-bar {
+  /* padding: 10px; */
+  padding: 15px 15px;
+  border-radius: 10px;
+  width: 500px;
+  outline: none;
+  border-color: transparent;
+}
+
+.search-bar:focus {
+  border: 2px solid;
+  border-color: #8a87ab;
+  transition: border 0.2s;
+}
+
+.tasks {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.task-card {
+  background-color: #18181c;
+  width: 225px;
+  padding: 15px;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+
+.pills {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+}
+
+.priority-pill {
+  background-color: #b9b8c7;
+  margin-right: 5px;
+  padding: 5px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.status-pill {
+  background-color: #5d5b72;
+  padding: 5px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.btn {
+  font-size: 20px;
+  padding: 10px;
+}
+
+.btn:first-child {
+  margin-right: 5px;
+}

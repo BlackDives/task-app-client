@@ -1,0 +1,55 @@
+<div class="main-container">
+  <div class="left-side">
+    <h1>Task</h1>
+    <p>The smart way...</p>
+  </div>
+  <div class="right-side">
+    <h1 class="signup-text">Sign up</h1>
+    <form class="form" [formGroup]="signUpFormBuilder">
+      <div class="name-fields">
+        <input
+          class="name-input-field"
+          placeholder="First Name"
+          formControlName="firstName"
+        />
+        <input
+          class="name-input-field"
+          placeholder="Last Name"
+          formControlName="lastName"
+        />
+      </div>
+      <div class="other-fields">
+        <input
+          class="input-field"
+          placeholder="Username"
+          formControlName="username"
+        />
+        <input
+          class="input-field"
+          placeholder="Email Address"
+          formControlName="emailAddress"
+        />
+        <input
+          class="input-field"
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+        />
+        <input
+          class="input-field"
+          type="password"
+          placeholder="Confirm Password"
+          formControlName="confirmPassword"
+        />
+        <button type="submit" class="button" (click)="onSignUp()">
+          Sign Up
+        </button>
+      </div>
+      <div class="bottom-text">
+        <p>
+          Already have an account? <a class="login-text" href="/login">Login</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

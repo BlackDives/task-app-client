@@ -1,0 +1,24 @@
+<button class="task-card" (click)="openDialog()">
+  <h3>
+    {{
+      taskTitle().length > 17
+        ? taskTitle().substring(0, 17) + "..."
+        : taskTitle()
+    }}
+  </h3>
+  <div class="pills">
+    <div class="priority-pill">
+      <p>{{ taskPriority() }}</p>
+    </div>
+    <div class="status-pill">
+      <p>{{ taskStatus() }}</p>
+    </div>
+  </div>
+  <p class="task-description">
+    {{
+      taskDescription().length > 50
+        ? taskDescription().substring(0, 50) + "..."
+        : taskDescription()
+    }}
+  </p>
+</button>

@@ -1,0 +1,26 @@
+<div class="main-container">
+  <div class="image">
+    <h1>Task</h1>
+    <p>The smart way...</p>
+  </div>
+  <form class="form" [formGroup]="loginForm" (ngSubmit)="login()">
+    <h1 class="login-text">Login</h1>
+    <input
+      class="input-field"
+      placeholder="Username"
+      formControlName="username"
+    />
+    <input
+      type="password"
+      class="input-field"
+      placeholder="Password"
+      formControlName="password"
+    />
+    <button type="submit" class="button">LOGIN</button>
+    <p class="bottom-text">
+      Don't have an account?
+      <a href="/register" class="sign-up-text">Sign up</a>
+    </p>
+    <p>{{ email.value }}</p>
+  </form>
+</div>

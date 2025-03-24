@@ -1,0 +1,23 @@
+<div class="task-page-main">
+  <div>
+    <h1>Tasks</h1>
+    <div class="create-section">
+      <button class="create-button" (click)="openCreateDialog()">Create</button>
+    </div>
+    <div class="search-bar-container">
+      <input class="search-bar" placeholder="Search..." />
+    </div>
+  </div>
+  <div class="tasks">
+    @for (task of allTasks(); track task.id){
+    <task-card
+      [key]="task.id"
+      [taskTitle]="task.title"
+      [taskDescription]="task.description"
+      [taskPriority]="priorityConvert(task.priority)"
+      [taskStatus]="statusConvert(task.status)"
+      [taskStartDate]="taskDate"
+    />
+    }
+  </div>
+</div>

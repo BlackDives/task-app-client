@@ -3,11 +3,9 @@ import { RouterOutlet } from '@angular/router';
 import { NavBar } from './components/nav-bar/nav-bar.component';
 
 @Component({
-  selector: 'app-root',
+  selector: 'main-component',
+  templateUrl: './main.component.html',
+  styleUrl: './main.component.css',
   imports: [RouterOutlet, NavBar],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
 })
-export class AppComponent {
-  title = 'task-app-client';
-}
+export class MainComponent {}

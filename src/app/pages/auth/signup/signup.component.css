@@ -1,0 +1,89 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #101013;
+  height: 100vh;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #8a87ab;
+  width: 50%;
+}
+.right-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.signup-text {
+  margin-bottom: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.name-fields {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.other-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.name-input-field {
+  width: 48%;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  outline: none;
+  border-color: transparent;
+}
+
+.input-field {
+  width: 500px;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  outline: none;
+  border-color: transparent;
+}
+
+.input-field:focus {
+  border-color: #8a87ab;
+}
+
+.button {
+  background-color: #8a87ab;
+  color: #ececee;
+  width: 500px;
+  border-radius: 10px;
+  padding: 15px;
+  font-weight: 700;
+  font-size: 16px;
+  border: transparent;
+  outline: none;
+}
+
+.bottom-text {
+  margin-top: 7px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.login-text {
+  color: #8a87ab;
+}

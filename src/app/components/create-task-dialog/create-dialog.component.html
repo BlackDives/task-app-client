@@ -1,0 +1,46 @@
+<div class="main-container">
+  <div class="dialog-header">
+    <p class="dialog-title">Create Task</p>
+  </div>
+  <form class="task-form" [formGroup]="createTaskForm" (ngSubmit)="onCreate()">
+    <div class="top">
+      <div class="task-title-container label-container">
+        <label class="label">Title</label>
+        <input
+          class="task-title-input"
+          placeholder="Task Title..."
+          formControlName="taskTitle"
+        />
+      </div>
+      <div class="task-description-container label-container">
+        <label class="label">Description</label>
+        <textarea
+          class="description-input"
+          placeholder="Task Description..."
+          rows="5"
+          formControlName="description"
+        ></textarea>
+      </div>
+      <div class="task-priority-container label-container">
+        <label for="priority-select" class="label">Priority</label>
+        <select id="priority-select" formControlName="priority">
+          <option>Low</option>
+          <option>Medium</option>
+          <option>High</option>
+        </select>
+      </div>
+      <div class="task-priority-container label-container">
+        <label for="priority-select" class="label">Status</label>
+        <select id="priority-select" formControlName="status">
+          <option>Not Started</option>
+          <option>Started</option>
+          <option>Finished</option>
+        </select>
+      </div>
+    </div>
+    <div class="bottom">
+      <button class="cancel-button" (click)="onClose()">Cancel</button>
+      <button class="save-button">Create</button>
+    </div>
+  </form>
+</div>
