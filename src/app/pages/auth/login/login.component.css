@@ -69,4 +69,17 @@
     align-items: center;
     justify-content: center;
   }
+
+  .input-field {
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .form {
+    width: 100%;
+    padding: 10px;
+  }
 }
