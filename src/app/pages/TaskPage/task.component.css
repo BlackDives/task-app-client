@@ -48,6 +48,7 @@
   margin-top: 2rem;
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 
 .task-card {
@@ -56,6 +57,7 @@
   padding: 15px;
   border-radius: 10px;
   margin-right: 15px;
+  border: 2px solid cyan;
 }
 
 .pills {
@@ -86,4 +88,27 @@
 
 .btn:first-child {
   margin-right: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .task-page-main {
+    height: 100%;
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .tasks {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .create-button {
+    width: 100%;
+  }
 }

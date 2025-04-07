@@ -32,3 +32,7 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.mat-bottom-sheet-container {
+  padding: 0px !important; /* Or any desired value */
+}

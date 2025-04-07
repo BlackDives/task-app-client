@@ -1,39 +1,26 @@
-import { Component, inject, model } from '@angular/core';
-import { DialogRef, DIALOG_DATA } from '@angular/cdk/dialog';
+import { Component, inject } from '@angular/core';
 import {
-  BreakpointObserver,
-  BreakpointState,
-  Breakpoints,
-  LayoutModule,
-} from '@angular/cdk/layout';
+  MatBottomSheet,
+  MatBottomSheetModule,
+  MatBottomSheetRef,
+} from '@angular/material/bottom-sheet';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { TaskService } from '../../services/task/task-service';
-import { NewTask, Priority, Status } from '../../interfaces/task';
-import { Subject, takeUntil } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Status, Priority, NewTask } from '../../interfaces/task';
 
 @Component({
-  selector: 'create-task-dialog',
-  templateUrl: './create-dialog.component.html',
-  styleUrl: './create-dialog.component.css',
-  imports: [ReactiveFormsModule, LayoutModule],
+  selector: 'create-sheet',
+  templateUrl: './create-sheet.component.html',
+  styleUrl: './create-sheet.component.css',
+  imports: [ReactiveFormsModule],
 })
-export class CreateTaskDialog {
-  destroyed = new Subject<void>();
-  constructor() {
-    inject(BreakpointObserver)
-      .observe(['(max-width: 768px)'])
-      .pipe(takeUntil(this.destroyed))
-      .subscribe((result: BreakpointState) => {
-        console.log(result);
-        console.log('sum triggered');
-      });
-  }
-  readonly dialogRef = inject<DialogRef<string>>(DialogRef<string>);
+export class CreateSheet {
+  private _bottomSheetRef =
+    inject<MatBottomSheetRef<CreateSheet>>(MatBottomSheetRef);
   private formBuilder = inject(FormBuilder);
   private taskService = inject(TaskService);
   private snackbarService = inject(MatSnackBar);
-  private data = inject(DIALOG_DATA);
 
   createTaskForm = this.formBuilder.group({
     taskTitle: ['', Validators.required],
@@ -42,13 +29,8 @@ export class CreateTaskDialog {
     priority: ['Low', Validators.required],
   });
 
-  ngOnDestroy(): void {
-    this.destroyed.next();
-    this.destroyed.complete();
-  }
-
-  onClose(): void {
-    this.dialogRef.close();
+  onDismiss(): void {
+    this._bottomSheetRef.dismiss();
   }
 
   onCreate(): void {
@@ -62,20 +44,17 @@ export class CreateTaskDialog {
         priority: this.priorityConvert(val.priority),
       };
       this.taskService.addUserTask(newTask).subscribe({
-        next: (data) => {
-          this.data = 'yo';
-        },
+        next: (data) => {},
         error: (error) => {
           this.snackbarService.open('Error Creating Task', 'Close', {
             duration: 3000,
           });
         },
         complete: () => {
-          console.log(this.data);
           this.snackbarService.open('Task Successfully Created', 'Close', {
             duration: 3000,
           });
-          this.dialogRef.close();
+          this._bottomSheetRef.dismiss();
         },
       });
     }

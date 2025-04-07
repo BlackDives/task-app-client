@@ -1,0 +1,22 @@
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidenav mode="push" opened class="sidenav-container">
+    <div class="title-section">
+      <h1>Task</h1>
+    </div>
+    <div class="links">
+      <ul class="links-list-container">
+        <li class="link-item"><a href="/tasks" class="link">Tasks</a></li>
+        <li class="link-item"><a href="/chat" class="link">Chat</a></li>
+        <li class="link-item"><a href="" class="link">Friends</a></li>
+      </ul>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content class="content-container">
+    <div class="menu-trigger-container">
+      <button mat-button (click)="sidenav.toggle()">Open Menu</button>
+    </div>
+    <div class="shorter-main-content">
+      <router-outlet />
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

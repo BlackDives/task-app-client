@@ -1,0 +1,71 @@
+<div class="dialog-container">
+  @if(!isEditMode()){
+  <div class="top">
+    <div class="dialog-title-container">
+      <p class="heading">Title</p>
+      <p class="dialog-title">{{ data.title }}</p>
+    </div>
+    <div class="dialog-description-container">
+      <p class="heading">Description</p>
+      <p class="dialog-description">{{ data.description }}</p>
+    </div>
+    <div class="dialog-details-container">
+      <p>Status: {{ data.status }}</p>
+      <p>Priority: {{ data.priority }}</p>
+      <p>Start Date: {{ data.date }}</p>
+    </div>
+  </div>
+  <div class="bottom dialog-buttons-container">
+    <button class="close-button button" (click)="onDelete()">Delete</button>
+    <button class="edit-button button" (click)="onEdit()">Edit</button>
+  </div>
+  }@else {
+  <div class="top">
+    <div class="dialog-header">
+      <p class="dialog-title">Edit Task</p>
+    </div>
+    <form class="task-form" [formGroup]="editTaskForm">
+      <div class="form-element-container">
+        <label for="" class="label"> Title </label>
+        <input
+          class="title-input"
+          placeholder="Task Title"
+          formControlName="title"
+        />
+      </div>
+      <div class="form-element-container">
+        <label class="label">Description</label>
+        <textarea
+          class="description-input"
+          placeholder="Task Description"
+          formControlName="description"
+          rows="7"
+        ></textarea>
+      </div>
+      <div class="form-element-container">
+        <label for="" class="label">Status</label>
+        <select class="priority-select" formControlName="status">
+          <option>Not Started</option>
+          <option>Started</option>
+          <option>Finished</option>
+        </select>
+      </div>
+      <div class="form-element-container">
+        <label for="" class="label">Priority</label>
+        <select class="priority-select" formControlName="priority">
+          <option>Low</option>
+          <option>Medium</option>
+          <option>High</option>
+        </select>
+      </div>
+      <div class="bottom">
+        <button class="cancel-button button" (click)="onEditCancel()">
+          Cancel
+        </button>
+        <button class="save-button button" (click)="onEditSave()">Save</button>
+      </div>
+    </form>
+  </div>
+
+  }
+</div>

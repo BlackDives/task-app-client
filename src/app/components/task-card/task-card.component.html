@@ -1,4 +1,4 @@
-<button class="task-card" (click)="openDialog()">
+<button class="task-card" (click)="screenIsLarge ? openDialog() : openSheet()">
   <h3>
     {{
       taskTitle().length > 17

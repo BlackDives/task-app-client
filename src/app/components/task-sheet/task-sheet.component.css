@@ -1,0 +1,129 @@
+.dialog-container {
+  background-color: #18181c;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  padding: 10px;
+}
+
+.heading {
+  font-weight: 700;
+}
+
+.dialog-title-container {
+  margin-bottom: 15px;
+}
+
+.dialog-title {
+  font-size: x-large;
+}
+
+.dialog-description-container {
+  margin-bottom: 15px;
+}
+
+.dialog-description {
+  font-size: x-large;
+}
+
+.dialog-details-container {
+  margin-bottom: 20px;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.button {
+  padding: 10px;
+  margin-bottom: 10px;
+  padding: 15px 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: medium;
+  font-weight: 700;
+}
+
+.edit-button {
+  background-color: #8a87ab;
+  color: #ececee;
+}
+
+.close-button {
+  background-color: #b04a5a;
+  color: #ececee;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog-header {
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-element-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.label {
+  color: #ececee;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.title-input {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: 3px solid transparent;
+  margin-bottom: 10px;
+}
+
+.description-input {
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 10px;
+  border: 3px solid transparent;
+  margin-bottom: 10px;
+}
+
+.description-input:focus {
+  outline: none;
+  border: 3px solid #8a87ab;
+}
+
+.priority-select {
+  font-size: 16px;
+  padding: 6px;
+  border-radius: 8px;
+  border: 3px solid transparent;
+}
+
+.priority-select:focus {
+  outline: none;
+  border: 3px solid #8a87ab;
+}
+
+.cancel-button {
+  background-color: #2e2d39;
+  color: #ececee;
+}
+
+.save-button {
+  background-color: #5b5a72;
+  color: #ececee;
+}

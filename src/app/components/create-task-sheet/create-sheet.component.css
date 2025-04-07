@@ -1,0 +1,115 @@
+.container {
+  background-color: #18181c;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  padding: 10px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+}
+
+.bottom {
+}
+
+.label-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-title-container {
+}
+
+.task-title-input {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: 3px solid transparent;
+}
+
+.task-title-input:focus {
+  outline: none;
+  border: 3px solid #8a87ab;
+}
+
+.task-description-container {
+}
+
+.description-input {
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 10px;
+  border: 3px solid transparent;
+}
+
+.description-input:focus {
+  outline: none;
+  border: 3px solid #8a87ab;
+}
+
+.select-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.priority-select {
+  font-size: 16px;
+  padding: 6px;
+  border-radius: 8px;
+  border: 3px solid transparent;
+}
+
+.priority-select:focus {
+  outline: none;
+  border: 3px solid #8a87ab;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.button {
+  padding: 10px;
+  margin-bottom: 10px;
+  padding: 15px 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: medium;
+  font-weight: 700;
+}
+
+.cancel-button {
+  background-color: #2e2d39;
+  color: #ececee;
+}
+
+.create-button {
+  background-color: #5b5a72;
+  color: #ececee;
+}
+
+.label {
+  color: #ececee;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.label-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}

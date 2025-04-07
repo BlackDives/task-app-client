@@ -144,3 +144,9 @@
   outline: none;
   border: 3px solid #8a87ab;
 }
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    display: none;
+  }
+}

@@ -1,9 +1,16 @@
 import { Component, signal, inject } from '@angular/core';
 import { Dialog } from '@angular/cdk/dialog';
+import {
+  BreakpointObserver,
+  BreakpointState,
+  LayoutModule,
+} from '@angular/cdk/layout';
 import { TaskCard } from '../../components/task-card/task-card.component';
 import { CreateTaskDialog } from '../../components/create-task-dialog/create-dialog.component';
+import { CreateSheet } from '../../components/create-task-sheet/create-sheet.component';
 import { Priority, Status, Task } from '../../interfaces/task';
 import { TaskService } from '../../services/task/task-service';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 
 export interface ExampleDialogData {
   title: string;
@@ -13,10 +20,25 @@ export interface ExampleDialogData {
   selector: 'task-page',
   templateUrl: './task.component.html',
   styleUrl: './task.component.css',
-  imports: [TaskCard, CreateTaskDialog],
+  imports: [TaskCard, CreateTaskDialog, CreateSheet, LayoutModule],
 })
 export class TaskPage {
+  constructor() {
+    inject(BreakpointObserver)
+      .observe(['(max-width: 768px)'])
+      .subscribe((result: BreakpointState) => {
+        if (result.breakpoints['(max-width: 768px)']) {
+          this.screenIsLarge = false;
+          this.dialog.closeAll();
+        } else if (!result.breakpoints['(max-width: 768px)']) {
+          this.screenIsLarge = true;
+          this.sheet.dismiss();
+        }
+      });
+  }
+  private screenIsLarge: boolean = true;
   readonly dialog = inject(Dialog);
+  private sheet = inject(MatBottomSheet);
   private taskService = inject(TaskService);
   allTasks = signal<Task[]>([]);
   taskDate = new Date().toLocaleString().split(',')[0];
@@ -26,10 +48,14 @@ export class TaskPage {
   }
 
   openCreateDialog(): void {
-    const dialogRef = this.dialog.open(CreateTaskDialog);
-    this.dialog.afterAllClosed.subscribe(() => {
-      this.loadTasks();
-    });
+    if (this.screenIsLarge) {
+      const dialogRef = this.dialog.open(CreateTaskDialog);
+      this.dialog.afterAllClosed.subscribe(() => {
+        this.loadTasks();
+      });
+    } else {
+      this.sheet.open(CreateSheet);
+    }
   }
 
   loadTasks() {
