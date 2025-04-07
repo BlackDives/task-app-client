@@ -12,7 +12,7 @@ export class AuthService {
 
   login(username: string, password: string): Observable<User> {
     return this.http
-      .post<User>(`/api/account/login`, { username, password })
+      .post<User>(`api/account/login`, { username, password })
       .pipe(
         tap((res) => {
           console.log('getting response');
@@ -24,7 +24,7 @@ export class AuthService {
   }
 
   signup(newUser: NewUser): Observable<User> {
-    return this.http.post<User>('/api/account/register', newUser).pipe(
+    return this.http.post<User>('api/account/register', newUser).pipe(
       tap((res) => {
         this.setSession(res);
       }),

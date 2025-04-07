@@ -10,22 +10,22 @@ export class TaskService {
   private http = inject(HttpClient);
 
   getUserTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>(`/api/task`);
+    return this.http.get<Task[]>(`api/task`);
   }
 
   addUserTask(newTask: NewTask): Observable<NewTask> {
-    return this.http.post<NewTask>('/api/task', newTask);
+    return this.http.post<NewTask>('api/task', newTask);
   }
 
   deleteUserTask(taskId: string): Observable<unknown> {
-    return this.http.delete(`/api/task/${taskId}`);
+    return this.http.delete(`api/task/${taskId}`);
   }
 
   updateUserTask(
     id: string,
     operations: JsonPatchOperation[]
   ): Observable<void> {
-    return this.http.patch<void>(`/api/task/${id}`, operations, {
+    return this.http.patch<void>(`api/task/${id}`, operations, {
       headers: { 'Content-type': 'application/json-patch+json' },
     });
   }
