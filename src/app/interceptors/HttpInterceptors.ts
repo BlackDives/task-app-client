@@ -12,9 +12,14 @@ export const apiInterceptor: HttpInterceptorFn = (req, next) => {
   let modifiedReq = req;
 
   if (!req.url.startsWith('http')) {
-    const url = req.url.startsWith('/') ? req.url.substring(1) : req.url;
+    const normalizedBaseUrl = baseUrl.endsWith('/')
+      ? baseUrl.slice(0, -1)
+      : baseUrl;
+
+    const normalizedUrl = req.url.startsWith('/') ? req.url : `/${req.url}`;
+
     modifiedReq = req.clone({
-      url: `${baseUrl}/${url}`,
+      url: `${normalizedBaseUrl}${normalizedUrl}`,
     });
   }
 
