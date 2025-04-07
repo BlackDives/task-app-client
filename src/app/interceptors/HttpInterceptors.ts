@@ -5,7 +5,7 @@ import { isDevMode } from '@angular/core';
 export const apiInterceptor: HttpInterceptorFn = (req, next) => {
   const baseUrl = isDevMode()
     ? 'http://localhost:5182'
-    : 'https://task-web-api.azurewebsites.net/';
+    : 'https://task-web-api.azurewebsites.net';
 
   const token = localStorage.getItem('token');
 
