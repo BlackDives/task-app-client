@@ -87,3 +87,22 @@
 .login-text {
   color: #8a87ab;
 }
+
+@media screen and (max-width: 992px) {
+  .left-side {
+    display: none;
+  }
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .name-fields {
+    flex-direction: column;
+  }
+
+  .name-input-field {
+    width: 100%;
+  }
+}

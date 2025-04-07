@@ -23,6 +23,9 @@
 }
 
 .links {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
 }
 
 .links-list-container {
@@ -44,4 +47,20 @@
 .content-container {
   background-color: #101013;
   width: 100%;
+}
+
+.settings {
+  background-color: #8a87ab;
+  color: #ececee;
+  border: none;
+  font-size: medium;
+  font-weight: 700;
+  padding: 15px 15px;
+  border-radius: 8px;
+  transition: background-color 0.5s;
+}
+
+.settings:hover {
+  background-color: #4a4861;
+  transition: background-color 0.5s;
 }

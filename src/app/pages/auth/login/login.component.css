@@ -59,3 +59,14 @@
 .sign-up-text {
   color: #8a87ab;
 }
+
+@media screen and (max-width: 992px) {
+  .image {
+    display: none;
+  }
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
